@@ -1,6 +1,12 @@
 /********** common setting **********/
+
 h2 {
     font-size: 2.8rem !important;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 2.0rem !important;
     font-weight: 700;
 }
 
@@ -16,6 +22,7 @@ button {
 
 .jumbotron {
     margin-bottom: 0 !important;
+    
 }
 
 .atlas-cta {
@@ -55,17 +62,21 @@ button {
 }
 
 .cta-ghost {
-    border: 2px solid #192440 !important;
+    border: 2px solid #2d122e !important;
     color: #192440;
 }
 
 .cta-ghost:hover {
     color: #ffffff;
-    background: #121a2e;
+    background: #2d122e;
 }
 
 #banner {
     background-size: cover;
+    background: rgb(211,0,222);
+background: linear-gradient(139deg, rgba(211,0,222,1) 0%, rgba(242,0,255,1) 100%);
+
+    
 }
 
 /********** banner **********/
@@ -74,7 +85,7 @@ button {
 }
 
 #banner header img {
-    max-width: 80px;
+    max-width: 17vw;
 }
 
 /********** feature (skew background) **********/
@@ -84,26 +95,11 @@ button {
 }
 
 #feature-first {
-    background: linear-gradient(168deg, #ffffff 55%, #00FFAD 0);
+    background: linear-gradient(168deg, #ffffff 55%, rgb(211,0,222) 0);
 }
 
 #feature-last {
-    background: #00FFAD;
-}
-
-/********** price table **********/
-#price-table {
-    padding-top: 4rem !important;
-    padding-bottom: 4rem !important;
-}
-
-#price-table__premium {
-    background: #192440;
-    color: #ffffff;
-}
-
-#price-table ul li {
-    padding: 5px 0;
+    background: rgb(211,0,222);
 }
 
 /********** contact **********/
@@ -116,13 +112,13 @@ button {
 }
 
 #contact form {
-    color: #00FFAD;
+    color: rgb(211,0,222);
 }
 
 #contact form input,
 #contact form textarea {
     background: transparent;
-    border: 1px solid #00FFAD;
+    border: 1px solid rgb(211,0,222);
     color: #ffffff;
 }
 
@@ -147,7 +143,7 @@ button {
 }
 
 #copyright #social-media a:hover {
-    background: #00FFAD;
+    background: rgb(211,0,222);
 }
 
 #copyright #social-media a:hover i {
