@@ -6,7 +6,7 @@ h2 {
 }
 
 h3 {
-    font-size: 2.0rem !important;
+    font-size: 1.5rem !important;
     font-weight: 700;
 }
 
@@ -21,8 +21,9 @@ button {
 }
 
 .jumbotron {
+    overflow: hidden;
     margin-bottom: 0 !important;
-    
+    padding: 2rem 2rem 0.5rem 2rem!important;
 }
 
 .atlas-cta {
@@ -41,18 +42,18 @@ button {
     width: 100%;
 }
 
-.cta-green {
-    background: #00FFAD;
+.cta-pink {
+    background: #ffffff;
     color: #192440;
 }
 
-.cta-green:hover {
-    color: #ffffff;
-    background: #00e69c;
+.cta-pink:hover {
+    color: #121a2e;
+    background: #b8b8b8;
 }
 
 .cta-blue {
-    background: #192440;
+    background: rgb(41, 43, 44);
     color: #ffffff;
 }
 
@@ -61,22 +62,17 @@ button {
     background: #121a2e;
 }
 
-.cta-ghost {
-    border: 2px solid #2d122e !important;
-    color: #192440;
-}
 
-.cta-ghost:hover {
-    color: #ffffff;
-    background: #2d122e;
-}
 
 #banner {
     background-size: cover;
-    background: rgb(211,0,222);
-background: linear-gradient(139deg, rgba(211,0,222,1) 0%, rgba(242,0,255,1) 100%);
-
-    
+    background: #d300de;
+    background: linear-gradient(139deg, rgba(211,0,222,1) 0%, rgba(242,0,255,1) 100%);
+    -webkit-box-shadow: 0px 10px 44px -14px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 10px 44px -14px rgba(0,0,0,0.75);
+    box-shadow: 0px 10px 44px -14px rgba(0,0,0,0.75);
+    overflow: hidden;    
+    z-index: -1;
 }
 
 /********** banner **********/
@@ -85,8 +81,18 @@ background: linear-gradient(139deg, rgba(211,0,222,1) 0%, rgba(242,0,255,1) 100%
 }
 
 #banner header img {
-    max-width: 17vw;
+    max-width: 13rem;
 }
+
+.wrap {
+    position: absolute;
+    overflow: hidden;
+    top:0px;
+    height: 100%;
+    left:0px;
+    right: 0px;
+    box-shadow: none;
+  }
 
 /********** feature (skew background) **********/
 .feature img {
@@ -104,6 +110,7 @@ background: linear-gradient(139deg, rgba(211,0,222,1) 0%, rgba(242,0,255,1) 100%
 
 /********** contact **********/
 #contact {
+    background: rgb(41, 43, 44);
     background-size: cover;
 }
 
@@ -112,19 +119,19 @@ background: linear-gradient(139deg, rgba(211,0,222,1) 0%, rgba(242,0,255,1) 100%
 }
 
 #contact form {
-    color: rgb(211,0,222);
+    color: rgb(255, 255, 255);
 }
 
 #contact form input,
 #contact form textarea {
     background: transparent;
-    border: 1px solid rgb(211,0,222);
+    border: 1px solid rgb(255, 255, 255);
     color: #ffffff;
 }
 
 /********** copyright **********/
 #copyright {
-    background: #192440;
+    background: rgb(53, 56, 58);
     padding: 2rem 3rem;
 }
 
@@ -151,8 +158,104 @@ background: linear-gradient(139deg, rgba(211,0,222,1) 0%, rgba(242,0,255,1) 100%
 }
 
 /********** RWD **********/
-@media (max-width: 575px) {
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) { 
     #banner h1 {
         font-size: 3.6rem;
     }
+
+    #banner header img {
+        max-width: 15rem;
+    }
+
+    h3 {
+        font-size: 1.8rem !important;
+        font-weight: 700;
+    }
+    
 }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    #banner header img {
+        max-width: 17rem;
+    }
+
+    h3 {
+        font-size: 2.0rem !important;
+        font-weight: 700;
+    }
+    
+    
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { 
+    #banner header img {
+        max-width: 17rem;
+    }
+    
+    .jumbotron {
+        padding: 2rem 4rem!important;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+    #banner header img {
+        max-width: 17rem;
+    }
+}
+
+@keyframes rotate360 {
+    0% {
+      transform: rotate( 0deg ) scale( 1 );
+    }
+    
+    100% {
+      transform: rotate( 360deg ) scale( 1.5 );
+    }
+  }
+  
+  @keyframes rotate180 {
+    0% {
+      transform: rotate( 0deg ) scale( 1.25 );
+    }
+      
+    100% {
+      transform: rotate( 180deg ) skewX( 1 );
+    }
+  }
+  @keyframes rotate90 {
+    0% {
+      transform: rotate( 0deg ) scale( 1 );
+    }
+      
+    100% {
+      transform: rotate( 90deg ) scale( 1.5 );
+    }
+  }
+  
+  polygon {
+    fill: white;
+    opacity: 0.15;
+    transform-origin: center center;
+    backface-visibility: hidden;
+    animation: rotate360 30s linear infinite alternate-reverse;
+    
+    &:nth-child(2n) {
+      animation-name: rotate180;
+      animation-duration: 15s;
+      animation-direction: alternate;
+    }
+    
+    &:nth-child(3n) {
+      animation-name: rotate90;
+      animation-duration: 10s;
+    }
+    
+    &:nth-child(5n) {
+      animation-duration: 30s;
+      animation-direction: alternate-reverse;
+    }
+  }
